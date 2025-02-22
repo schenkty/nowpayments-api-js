@@ -14,6 +14,8 @@ export interface InvoiceReturn {
   cancel_url: string
   created_at: string
   updated_at: string
+  is_fixed_rate: boolean
+  is_fee_paid_by_user: boolean
 }
 
 export interface CreateInvoice extends ICreateInvoice {
@@ -29,7 +31,9 @@ const createInvoice = async ({
   order_id,
   order_description,
   success_url,
-  cancel_url
+  cancel_url,
+  is_fixed_rate,
+  is_fee_paid_by_user
 }: CreateInvoice): Promise<InvoiceReturn | Error> => {
   const API = new ConnectApi({ apiKey })
 
@@ -41,7 +45,9 @@ const createInvoice = async ({
     order_id,
     order_description,
     success_url,
-    cancel_url
+    cancel_url,
+    is_fixed_rate,
+    is_fee_paid_by_user
   })
   return data
 }
