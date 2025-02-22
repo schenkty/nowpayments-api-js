@@ -79,7 +79,9 @@ class NOWPaymentsApi {
     order_id,
     order_description,
     success_url,
-    cancel_url
+    cancel_url,
+    is_fixed_rate,
+    is_fee_paid_by_user
   }: ICreateInvoice) {
     return await NP.createInvoice({
       apiKey: this.apiKey,
@@ -90,7 +92,9 @@ class NOWPaymentsApi {
       order_id,
       order_description,
       success_url,
-      cancel_url
+      cancel_url,
+      is_fixed_rate,
+      is_fee_paid_by_user
     })
   }
 }
