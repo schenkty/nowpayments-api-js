@@ -46,6 +46,8 @@ export interface ICreateInvoice {
   order_description?: string
   success_url?: string
   cancel_url?: string
+  is_fixed_rate?: boolean
+  is_fee_paid_by_user?: boolean
 }
 
 export interface Error {
